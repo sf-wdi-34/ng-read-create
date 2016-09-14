@@ -1,6 +1,5 @@
 <!--
-market: SF,
-credit: https://github.com/SF-WDI-LABS/shared_modules/tree/master/03-angular-mean/http-update-delete/27-28
+location: SF
 -->
 
 <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60">
@@ -24,12 +23,48 @@ We **should** know jQuery's `$.ajax` by now.
   > It makes HTTP calls asynchronously from our browser and allows us to request information over HTTP without interrupting the front-end or causing page reloads.
 </details>
 
-In our projects, we've used this method often, and we've seen the `$.get` and `$.post` shorthand versions. Angular has a stand-in for `$.ajax` called `$http`.
+In our projects, we've used this method often, and we've seen the `$.get` and `$.post` shorthand versions.
 
-`$http` is an Angular service.
+
+Angular has a stand-in for `$.ajax` called `$http`.  `$http` is an Angular service.
 
 
 We can use `$http` from directly within a controller, so we'll try that to get started. When we talk more about services, we'll look at another option.
+
+### Check for Understanding
+
+Look at the `$.ajax()` call below. What does each line do?
+
+```js
+$.ajax({
+  method: 'GET',
+  url: baseUrl + '/api/projects',
+  success: onSuccess,
+  error: onError
+});
+function onSuccess(response) {
+  console.log('response for all projects:', response);
+}
+function onError(xhr, status, error) {
+  console.log('There was an error getting the data', error);
+}
+```
+
+
+
+```js
+$http({
+  method: 'GET',
+  url: baseUrl + '/api/projects'
+}).then(function successCallback(response) {
+  console.log('response for all projects:', response);
+}, function errorCallback(error) {
+  console.log('There was an error getting the data', error);
+});
+```
+
+
+
 
 
 ### Echo App
@@ -287,7 +322,7 @@ To create an instance of a resource, we almost always need to send along some da
 
 <details><summary>**In Angular, how do we get form data when it's submitted and serialize it?**  Getting the data is a simple application of `ng-model`, with an object waiting in the controller to track form data. To enable submit, we'll need a submit button inside the form, an `ng-submit` attribute in the form tag, and a function in the controller to handle the submit event. Click for sample code!</summary>
 
- 
+
   ```html
   <!-- html -->
   <form ng-submit="projectCtrl.createProject();">
@@ -296,7 +331,7 @@ To create an instance of a resource, we almost always need to send along some da
     <input type="submit">
   </form>
   ```
-  
+
   ```js
   // inside ProjectController
   vm.createProject = function(){
@@ -314,7 +349,7 @@ With these examples, you have all the tools you need to figure out how to make r
 
 ## Your Turn
 
-We've gone over how to build forms and work with remote servers using Angular. Now it is your turn to connect an angular front-end to an API. 
+We've gone over how to build forms and work with remote servers using Angular. Now it is your turn to connect an angular front-end to an API.
 
 Tackle [Tunely Sprint 2](https://github.com/sf-wdi-31/tunely-angular/blob/master/docs/sprint2.md)!
 
