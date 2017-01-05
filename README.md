@@ -11,9 +11,9 @@ location: SF
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
- If you want to integrate social media, live searched images, or most other data into an app, you're probably going to rely on some kind of web API and AJAX. Letting users create, read, update and delete data in a database also requires AJAX.
+ If you want to integrate social media, live searched images, or most other data into an app, you're probably going to rely on some kind of web API and AJAX. Letting users create, read, update and delete data in a database also requires HTTP requests. Since Angular excels at building single-page apps, we'll take advantage AJAX to avoid refreshing.
 
-  Angular's has an `$http` service for making AJAX requests.  Its syntax is different from what we saw with jQuery's `$.ajax()` method, so we'll see an Angular way of doing AJAX requests. 
+Angular has an `$http` service for making AJAX requests.  Its syntax is different from what we saw with jQuery's `$.ajax()` method, so we'll see an Angular way of doing AJAX requests. 
 
  This topic in particular is also a great example of how time you spend learning one library or framework can carry over to other tools.
 
@@ -128,7 +128,7 @@ The [`$http`](https://docs.angularjs.org/api/ng/service/$http) service is a core
 
 The popular front-end code sharing website jsFiddle has an "echo" API that responds with information about the requests it gets. This simple [Echo App](https://jsfiddle.net/xh1bo85v/2/) uses the echo API to show off Angular's `$http` service.  You should be able to answer these questions.
 
-1.  We don't see the entire HTML file in a jsFiddle, `echoApp` is the name of the `ng-app` used on this page. Where is `echoApp` defined?
+1.  We don't see the entire HTML file in a jsFiddle, but `echoApp` is the name of the `ng-app` used on this page. Where is `echoApp`  defined in the code we can see?
 
 2.  What is the name of the `ng-controller` used on the page?
 
